@@ -1,0 +1,6 @@
+{
+  "name": "Beta Mount",
+  "summary": "Beta Mount is a made-up mount.",
+  "top": { "overview": "On top.", "transitions": [{ "transition": "Beta to Gamma", "attempt_probability": { "gi": 20, "nogi": 20 } }] },
+  "bottom": { "overview": "Underneath.", "transitions": [] }
+}

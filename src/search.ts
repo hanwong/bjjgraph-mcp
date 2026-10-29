@@ -84,6 +84,22 @@ function dice(a: string, b: string): number {
   return (2 * common) / (ta.size + tb.size || 1);
 }
 
+/** Edit-distance similarity (0..1) counting an adjacent swap as one edit. */
+function editSim(a: string, b: string): number {
+  const d: number[][] = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+    }
+  }
+  return 1 - d[a.length][b.length] / Math.max(a.length, b.length, 1);
+}
+
+const tokenSim = (t: string, n: string) => (n.startsWith(t) ? 1 : Math.max(dice(t, n), editSim(t, n)));
+
 /** 0..100 similarity between a normalized query and a normalized name. */
 export function scoreName(q: string, name: string): number {
   if (!q || !name) return 0;
@@ -95,9 +111,8 @@ export function scoreName(q: string, name: string): number {
   const prefixHits = qTokens.filter((t) => nTokens.some((n) => n.startsWith(t))).length;
   if (prefixHits === qTokens.length) return 62 + 10 * (qTokens.length / nTokens.length);
   // Typo tolerance: each query token against its most similar name token.
-  const tokenSim =
-    qTokens.reduce((sum, t) => sum + Math.max(...nTokens.map((n) => (n.startsWith(t) ? 1 : dice(t, n)))), 0) / qTokens.length;
-  return Math.round(55 * tokenSim + 25 * dice(q, name));
+  const sim = qTokens.reduce((sum, t) => sum + Math.max(...nTokens.map((n) => tokenSim(t, n))), 0) / qTokens.length;
+  return Math.round(55 * sim + 25 * dice(q, name));
 }
 
 export interface SearchHit {

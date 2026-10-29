@@ -1,0 +1,33 @@
+{
+  "name": "Alpha Guard",
+  "aliases": ["AG", "Alpha Shield"],
+  "summary": "Alpha Guard is a made-up guard used only for tests.",
+  "key_principles": ["Keep the knee in"],
+  "related_positions": [{ "name": "Beta Mount", "relationship": "Where sweeps land" }],
+  "variations": [{ "name": "Deep Alpha", "description": "Deeper version" }],
+  "clips": [],
+  "flashcards_position": [{ "q": "dropped?", "a": "yes" }],
+  "top": {
+    "overview": "Top player tries to pass.",
+    "state_properties": { "point_value": 0, "risk_level": "Medium" },
+    "key_principles": ["Stay heavy"],
+    "decision_tree": [],
+    "common_errors": [{ "error": "Standing tall", "consequence": "Swept", "correction": "Stay low" }],
+    "training_drills": [],
+    "transitions": [],
+    "clips": []
+  },
+  "bottom": {
+    "overview": "Bottom player hunts sweeps.",
+    "state_properties": { "point_value": 0 },
+    "key_principles": ["Frame first"],
+    "decision_tree": [],
+    "common_errors": [],
+    "training_drills": [],
+    "transitions": [
+      { "transition": "Alpha Sweep", "attempt_probability": { "gi": 30, "nogi": 25 } },
+      { "transition": "Alpha Back Take", "attempt_probability": { "gi": 10, "nogi": null } }
+    ],
+    "clips": [{ "id": "abc123", "title": "Alpha guard basics", "channel": "Test Channel", "duration": 60 }]
+  }
+}

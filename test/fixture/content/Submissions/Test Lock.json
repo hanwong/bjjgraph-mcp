@@ -1,0 +1,11 @@
+{
+  "name": "Test Lock",
+  "is_family": true,
+  "aliases": ["TL"],
+  "summary": "A made-up joint lock family.",
+  "submission_category": "Joint Lock",
+  "target_area": "Elbow joint",
+  "success_rate": { "gi": 50, "nogi": 50 },
+  "safety_considerations": { "tap_signals": ["Tap early"] },
+  "related_submissions": ["Other Lock"]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Test Lock from Beta Mount",
+  "summary": "Finish the test lock from Beta Mount.",
+  "submission_category": "Joint Lock",
+  "from_position": "Beta Mount/Top",
+  "success_rate": { "gi": 65, "nogi": 65 },
+  "outcomes": [
+    { "to": "game-over", "probability": { "gi": 65, "nogi": 65 }, "result": "success" },
+    { "to": "Beta Mount/Top", "probability": { "gi": 35, "nogi": 35 }, "result": "failure" }
+  ],
+  "attacker": { "execution_steps": [{ "step_number": 1, "action": "Isolate", "description": "Trap the arm." }] },
+  "defender": { "escape_paths": ["Hide the elbow"] }
+}

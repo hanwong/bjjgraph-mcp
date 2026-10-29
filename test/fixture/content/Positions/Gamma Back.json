@@ -1,0 +1,6 @@
+{
+  "name": "Gamma Back",
+  "summary": "Gamma Back is a made-up back control.",
+  "top": { "overview": "You have the back.", "transitions": [] },
+  "bottom": { "overview": "Your back is taken.", "transitions": [] }
+}

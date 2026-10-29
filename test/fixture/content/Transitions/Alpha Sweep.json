@@ -1,0 +1,39 @@
+{
+  "name": "Alpha Sweep",
+  "aliases": ["Shield Sweep"],
+  "summary": "A test sweep from Alpha Guard to Beta Mount.",
+  "from_position": "Alpha Guard/Bottom",
+  "outcomes": [
+    { "to": "Beta Mount/Top", "probability": { "gi": 60, "nogi": 55 }, "result": "success" },
+    { "to": "Alpha Guard/Bottom", "probability": { "gi": 30, "nogi": 30 }, "result": "failure" },
+    { "to": "Beta Mount/Bottom", "probability": { "gi": 10, "nogi": 15 }, "result": "counter" }
+  ],
+  "success_rate": { "gi": 60, "nogi": 55 },
+  "conditions": ["Opponent leans forward"],
+  "overview": "Long prose about the sweep.",
+  "attacker": {
+    "key_principles": ["Kick the hip"],
+    "setup_requirements": ["Grip the sleeve"],
+    "execution_steps": [
+      { "step_number": 1, "action": "Grip", "description": "Take the sleeve." },
+      { "step_number": 2, "action": "Kick", "description": "Elevate and turn." }
+    ],
+    "common_counters": [{ "counter": "Base out", "effectiveness": "High", "your_response": "Switch sides", "targets_outcome": "Alpha Guard/Bottom" }],
+    "common_errors": [{ "error": "No grip", "consequence": "Fails", "correction": "Grip first" }],
+    "training_progressions": [{ "phase": "Solo", "focus": "Hip movement", "description": "Drill alone." }],
+    "flashcards": [{ "q": "drop me", "a": "ok" }],
+    "safety_considerations": "Land softly.",
+    "clips": [{ "id": "xyz789", "title": "Alpha sweep clip", "channel": "Test Channel", "duration": 45 }]
+  },
+  "defender": {
+    "key_principles": ["Wide base"],
+    "recognition_cues": ["Sleeve grip appears"],
+    "defensive_options": [{ "action": "Post the hand", "when_to_use": "Early", "targets_outcome": "Alpha Guard/Top" }],
+    "favorable_outcomes": [{ "outcome": "Alpha Guard/Top", "how": "Keep base" }],
+    "common_errors": [],
+    "training_progressions": [],
+    "flashcards": []
+  },
+  "variants_and_adaptations": [{ "variant_name": "No-gi Alpha Sweep", "description": "Use wrist control." }],
+  "related_content": [{ "name": "Beta Mount", "relationship": "Landing spot" }]
+}

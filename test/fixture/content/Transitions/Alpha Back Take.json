@@ -1,0 +1,12 @@
+{
+  "name": "Alpha Back Take",
+  "summary": "A gi-only test back take.",
+  "from_position": "alpha guard/bottom",
+  "outcomes": [
+    { "to": "Gamma Back/Top", "probability": { "gi": 40, "nogi": null }, "result": "success" },
+    { "to": "Alpha Guard/Bottom", "probability": { "gi": 60, "nogi": null }, "result": "failure" }
+  ],
+  "success_rate": { "gi": 40, "nogi": null },
+  "attacker": { "execution_steps": [{ "step_number": 1, "action": "Climb", "description": "Go to the back." }] },
+  "defender": {}
+}

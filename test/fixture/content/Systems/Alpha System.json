@@ -1,0 +1,1 @@
+{ "name": "Alpha System", "system_type": "Guard System", "difficulty_level": "Beginner", "summary": "A made-up guard system.", "guide": { "kind": "course_companion", "coverage": { "includes": ["Alpha sweeps"] } }, "overview": "System prose." }

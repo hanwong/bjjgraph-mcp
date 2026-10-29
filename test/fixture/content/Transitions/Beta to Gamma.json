@@ -1,0 +1,12 @@
+{
+  "name": "Beta to Gamma",
+  "summary": "Take the back from Beta Mount.",
+  "from_position": "Beta Mount/Top",
+  "outcomes": [
+    { "to": "Gamma Back/Top", "probability": { "gi": 70, "nogi": 70 }, "result": "success" },
+    { "to": "Beta Mount/Bottom", "probability": { "gi": 30, "nogi": 30 }, "result": "counter" }
+  ],
+  "success_rate": { "gi": 70, "nogi": 70 },
+  "attacker": {},
+  "defender": {}
+}

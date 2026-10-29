@@ -1,5 +1,5 @@
 // Compact plain-text rendering of BJJGraph records, plus paging so replies stay small.
-import { arr, num, obj, pick, str, type BjjIndex, type Entry, type Json, type Move, type Probability, type Ruleset } from "./data.js";
+import { arr, num, obj, pick, prob, str, type BjjIndex, type Entry, type Json, type Move, type Probability, type Ruleset } from "./data.js";
 
 export const DEFAULT_MAX_CHARS = 6000;
 export const NOTICE =
@@ -129,7 +129,7 @@ export function renderTechnique(
     if (facts) lines.push(facts);
     if (e.family && e.family !== e.name) lines.push(`Family: ${e.family}`);
   }
-  if (r.success_rate) lines.push(`Success rate: ${pct(obj(r.success_rate) as Probability)}`);
+  if (r.success_rate) lines.push(`Success rate: ${pct(prob(r.success_rate))}`);
   if (str(r.summary)) lines.push("", str(r.summary));
 
   if (want("outcomes")) {
@@ -232,7 +232,7 @@ export function renderPosition(
         lines.push(
           "",
           `## Techniques from ${state} (attempt weight; details via bjj_position_options)`,
-          menu.map((t) => `${str(t.transition)} (${pct(obj(t.attempt_probability) as Probability)})`).join("; "),
+          menu.map((t) => `${str(t.transition)} (${pct(prob(t.attempt_probability))})`).join("; "),
         );
       }
     }
