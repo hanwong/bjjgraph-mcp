@@ -21,7 +21,8 @@
     "fetch-data": "npm run build --silent && node dist/src/fetch-data.js",
     "start": "node dist/src/index.js",
     "test": "npm run build --silent && node --test dist/test/*.test.js",
-    "check-data": "npm run build --silent && node --test dist/test/real-data.check.js"
+    "check-data": "npm run build --silent && node --test dist/test/real-data.check.js",
+    "prepare": "tsc -p tsconfig.json"
   },
   "repository": {
     "type": "git",
