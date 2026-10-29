@@ -1,0 +1,6 @@
+node_modules/
+dist/
+# BJJGraph data is fetched locally by each user and must never be committed.
+data/
+*.log
+.DS_Store

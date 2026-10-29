@@ -1,0 +1,45 @@
+{
+  "name": "bjjgraph-mcp",
+  "version": "0.1.0",
+  "description": "Local MCP server for exploring the BJJGraph Brazilian Jiu-Jitsu knowledge graph from Claude (data not included; fetched by the user).",
+  "license": "MIT",
+  "author": "hanwong",
+  "type": "module",
+  "bin": {
+    "bjjgraph-mcp": "dist/src/index.js"
+  },
+  "files": [
+    "dist/src",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "fetch-data": "npm run build --silent && node dist/src/fetch-data.js",
+    "start": "node dist/src/index.js",
+    "test": "npm run build --silent && node --test dist/test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanwong/bjjgraph-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "bjj",
+    "jiu-jitsu",
+    "claude",
+    "bjjgraph"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.43",
+    "typescript": "5.9.3"
+  }
+}
